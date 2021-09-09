@@ -18,5 +18,5 @@ else:
             print("The Covid-19 pandemic will soon come to an end.")
         else:
             if fortune == 4:
-                print("You will grow an inch taller ;)")
+                print("You will grow an inch taller!")
 print("Now, go spread positive vibes!")
