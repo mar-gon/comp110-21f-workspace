@@ -1,6 +1,15 @@
 """Repeating a beat in a loop."""
 
-__author__ = "ENTER YOUR 9-DIGIT PID HERE"
+__author__ = "730394836"
 
 
-# Begin your solution here...
+beat: str = input("What beat do you want to repeat? ")
+reps: int = int(input("How many times do you want to repeat it? "))
+rep_beat = (beat + " ") * reps
+
+while reps <= 0:
+    print("No beat...")
+    reps = (reps * -1) + 1
+while reps > 0:
+    print(rep_beat)
+    reps = reps - reps
