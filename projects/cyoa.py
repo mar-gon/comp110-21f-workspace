@@ -58,8 +58,8 @@ def main() -> None:
         
 
 def smash_choice(p: int) -> int:
-    global player
     """Enters choice 3 of inital choices and alters points."""
+    global player
     print("You had a really bad day today. Instead of dealing with your emotions in a mature way, you decide to take it out on the console.")
     print("You grab a rock, but right before you are about to smash it, the console it turns on an reads:")
     print(f"NOW, NOW, {player}, I WOULDN'T DO THAT IF I WERE YOU. THIS IS BABY {BABY}. YOU SHOULDN'T HURT A BABY.")
