@@ -19,7 +19,7 @@ def all(items: list[int], num: int) -> bool:
 def is_equal(l1: list[int], l2: list[int]) -> bool:
     """Tests if two lists are the same."""
     i: int = 0
-    while i < len(l1) and i < len(l2):
+    while i <= len(l1) and i <= len(l2):
         while l1[i] != l2[i] or len(l1) != len(l2):
             return False
         i += 1
