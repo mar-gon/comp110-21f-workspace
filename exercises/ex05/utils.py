@@ -10,8 +10,6 @@ def only_evens(nums: list[int]) -> list[int]:
     while i < len(nums):
         if (nums[i] % 2) == 0:
             evens.append(nums[i])
-        else: 
-            return evens
         i += 1
     return evens
 
@@ -30,6 +28,7 @@ def sub(original: list[int], start_index: int, end_index: int) -> list[int]:
         while i < end_index:
             new.append(original[i])
             i += 1
+        return new
     if end_index < len(original):
         while start_index < end_index:
             new.append(original[start_index])

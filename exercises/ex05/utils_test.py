@@ -12,11 +12,8 @@ from exercises.ex05.utils import concat
 def test_only_evens1() -> None:
     """Tests if it returns evens."""
     lis: list[int] = [1, 2, 3, 4]
-    i: int = 0
-    while i < len(only_evens(lis)):
-        assert (only_evens(lis)[i] % 2) == 0
-        i += 1
-
+    assert only_evens(lis) == [2, 4]
+    
 
 def test_only_evens2() -> None:
     """Tests if it returns blank if all odds."""
