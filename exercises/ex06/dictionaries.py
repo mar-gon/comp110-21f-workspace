@@ -7,13 +7,17 @@ def invert(old: dict[str, str]) -> dict[str, str]:
     """Inverts keys and values."""
     new: dict[str, str] = dict()
     for key in old:
+        count: int = 0
         new[old[key]] = key
-        if new == KeyError:
-            raise KeyError("You cant have two keys or values twice.")
+        for item in old:
+            if old[key] == old[item]:
+                count += 1
+            if count >= 2:
+                raise KeyError("You cant have two keys or values twice.")
     return new
 
 
-def favorite_colors(ppl: dict[str, str]) -> str:
+def favorite_color(ppl: dict[str, str]) -> str:
     """Returns most frequent color."""
     red: int = 0
     orange: int = 0
@@ -63,10 +67,9 @@ def count(lis: list[str]) -> dict[str, int]:
     if lis == []:
         return dic
     while i < len(lis):
-        for item in dic:
-            if lis[i] in dic:
-                dic[lis[i]] += 1
-            else:
-                dic[lis[i]] = 1
+        if lis[i] in dic:
+            dic[lis[i]] += 1
+        else:
+            dic[lis[i]] = 1
         i += 1
     return dic

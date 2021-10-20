@@ -5,7 +5,7 @@
 __author__ = "123456789"
 
 from exercises.ex06.dictionaries import invert
-from exercises.ex06.dictionaries import favorite_colors
+from exercises.ex06.dictionaries import favorite_color
 from exercises.ex06.dictionaries import count
 
 
@@ -27,22 +27,22 @@ def test_invert3() -> None:
     assert invert(dic) == {"x": "a", "y": "b", "z": "c"}
 
 
-def test_favorite_colors1() -> None:
+def test_favorite_color1() -> None:
     """Tests if function works normally."""
     dic: dict[str, str] = {"Marc": "yellow", "Ezri": "blue", "Kris": "blue", "Mariana": "pink"}
-    assert favorite_colors(dic) == "blue"
+    assert favorite_color(dic) == "blue"
 
 
-def test_favorite_colors2() -> None:
+def test_favorite_color2() -> None:
     """Tests if it returns 'no favorite colors' if no colors are repeated."""
     dic: dict[str, str] = {"Marc": "yellow", "Ezri": "green", "Kris": "blue", "Mariana": "pink", "Joe": "purple", "Lizzie": "red", "Pou": "orange"}
-    assert favorite_colors(dic) == "No favorite colors."
+    assert favorite_color(dic) == "No favorite colors."
 
 
-def test_favorite_colors3() -> None:
+def test_favorite_color3() -> None:
     """Tests if it returns 'no favorite colors' if empty dict in argument."""
     dic: dict[str, str] = {}
-    assert favorite_colors(dic) == "No favorite colors."
+    assert favorite_color(dic) == "No favorite colors."
 
 
 def test_count1() -> None:
