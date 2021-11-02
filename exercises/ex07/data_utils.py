@@ -44,7 +44,7 @@ def head(old: dict[str, list[str]], N: int) -> dict[str, list[str]]:
     for column in old:
         store_items: list[str] = []
         i: int = 0
-        while i < N and N <= len(old):
+        while i < N and N < len(old):
             store_items.append(old[column][i])
             i += 1
         new[column] = store_items
