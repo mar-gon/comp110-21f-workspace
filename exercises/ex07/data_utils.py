@@ -73,3 +73,18 @@ def concat(first: dict[str, list[str]], second: dict[str, list[str]]) -> dict[st
         else:
             combined[column] = second[column]
     return combined
+
+
+def count(items: list[str]) -> dict[str, int]:
+    """Counts the number of times an item appears in the list."""
+    dic: dict[str, int] = {}
+    i: int = 0
+    if items == []:
+        return dic
+    while i < len(items):
+        if items[i] in dic:
+            dic[items[i]] += 1
+        else:
+            dic[items[i]] = 1
+        i += 1
+    return dic
