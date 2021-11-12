@@ -2,7 +2,6 @@
 from typing import Union
 
 
-
 def hello(name: Union[str, int] = "World") -> str:
     """A delightful greeting."""
     greeting: str = "Hello, "
