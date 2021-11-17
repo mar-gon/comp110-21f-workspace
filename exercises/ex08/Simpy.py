@@ -72,3 +72,44 @@ class Simpy:
                 result.values.append(self.values[i] ** rhs.values[i])
                 i += 1
         return result
+
+    def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """Produces a mask using Simpy."""
+        result: list[bool] = []
+        if isinstance(rhs, float):
+            for value in self.values:
+                result.append(value == rhs)
+        if isinstance(rhs, Simpy): 
+            assert len(self.values) == len(rhs.values)
+            i: int = 0
+            while i < len(self.values):
+                result.append(self.values[i] == rhs.values[i])
+                i += 1
+        return result
+
+    def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """Produces a mask using greater than operator."""
+        result: list[bool] = []
+        if isinstance(rhs, float):
+            for value in self.values:
+                result.append(value > rhs)
+        if isinstance(rhs, Simpy): 
+            assert len(self.values) == len(rhs.values)
+            i: int = 0
+            while i < len(self.values):
+                result.append(self.values[i] > rhs.values[i])
+                i += 1
+        return result
+       
+    def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
+        """Overloads subcription notation to filter with a mask."""
+        result: Simpy = Simpy([])
+        if isinstance(rhs, int): 
+            assert len(self.values) > rhs
+            index_item: float = self.values[rhs]
+            return index_item
+        else: 
+            for i in range(len(rhs)):
+                if rhs[i] is True:
+                    result.values.append(self.values[i])
+        return result
