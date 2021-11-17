@@ -10,6 +10,7 @@ class Pizza:
 
     def __init__(self, size: str, toppings: int):
         """Constructor definition for initialization of attributes."""
+        # attribute initialization below
         self.size = size
         self.toppings = toppings
 
